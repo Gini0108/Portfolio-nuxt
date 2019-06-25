@@ -66,7 +66,7 @@ $quote = $quoteRepository->find();
           </div>
           <div class="mobile-divider-medium"></div>
           <a href="https://www.youtube.com/channel/UC6KVWCZJfsgJ6bVUi8G6-DQ" title="Secret link to my Youtube channel" target="_blank">
-            <img class="desktop-left-margin profile rounded" src="<?=getRandomImage('assets/images/Sjors/min/')?>" alt="A picture of me" title="Sjors van Holst">
+            <img class="desktop-left-margin profile rounded" src="<?=getRandomImage('assets/images/sjors/min/')?>" alt="A picture of me" title="Sjors van Holst">
           </a>
         </div>
       </div>
@@ -240,7 +240,7 @@ $quote = $quoteRepository->find();
 
           <div>
             <div class="mobile-divider-small desktop-divider-small"></div>
-            <a href="<?= $url ?>"><img class='desktop-left-margin product rounded' src='images/Univisium/<?= $img_source ?>' alt='<?= $img_alternative ?>' title='<?= $img_title ?>'></a>
+            <a href="<?= $url ?>"><img class='desktop-left-margin product rounded' src='images/univisium/<?= $img_source ?>' alt='<?= $img_alternative ?>' title='<?= $img_title ?>'></a>
             <div class="mobile-divider-small desktop-divider-small"></div>
           </div>
         </div>
