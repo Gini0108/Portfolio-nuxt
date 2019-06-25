@@ -48,6 +48,7 @@ img {
 }
 
 blockquote {
+  transition: margin 300ms;
   margin: 20px 0 0 0;
   bottom: 0px;
 }
@@ -56,13 +57,9 @@ blockquote h3 {
   opacity: 0.6;
 }
 
-blockquote #orgin, blockquote h2 {
-  transition: margin 1500ms;
-}
-
-blockquote #orgin:hover, blockquote h2:hover {
-  margin-left: 15px;
-  transition: margin 150ms;
+blockquote:hover {
+  margin-left: 6px;
+  transition: margin 600ms;
 }
 
 .banner {
