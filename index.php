@@ -171,6 +171,13 @@ $quote = $quoteRepository->find();
                 - Internship as a web developer
               </i>
             </div>
+            <div class="mobile-divider-medium desktop-divider-medium"></div>
+            <h3>Get Interactive (<?=getMonths('2019-02-02', '2019-06-11')?> months):</h3>
+            <div class="sub-text">
+              <i>
+                - Part time software developer
+              </i>
+            </div>
           </div>
         </div>
 
