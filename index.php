@@ -216,44 +216,48 @@ $quote = $quoteRepository->find();
       </div>
 
       <?php
-        $result = $conn->query("SELECT * FROM `article`");
-
-        if($result->num_rows > 0):
+        $results = $conn->query("SELECT * FROM `article`")->fetchAll();
+        if(count($results) > 0):
       ?>
 
-      <div class="cell rounded">
-        <h1>Things I wrote</h1>
+        <div class="cell rounded">
+          <h1>Things I wrote</h1>
 
-        <?php
-          while ($row = $result->fetch_assoc()):
-          $url = "https://sjorsvanholst.nl/article.php?title=".strtolower(str_replace(' ', '-', $row['title']));
+          <?php
+            foreach ($results as $row):
+              $url = "https://sjorsvanholst.nl/article.php?title=".strtolower(str_replace(' ', '-', $row['title']));
 
-          $stmt = $conn->prepare("SELECT source, alternative, title FROM `image` WHERE id = ?");
-          $stmt->bind_param('i', $row['image_id']);
-          $stmt->execute();
+              if ($row['image_id']) {
+                $stmt = $conn->prepare("SELECT source, alternative, title FROM `image` WHERE id = ?");
+                $stmt->bind_param('i', $row['image_id']);
+                $stmt->execute();
 
-          $stmt->bind_result($img_source, $img_alternative, $img_title);
-          $stmt->fetch();
-          $stmt->close();
-        ?>
+                $stmt->bind_result($img_source, $img_alternative, $img_title);
+                $stmt->fetch();
+                $stmt->close();
+              }
+          ?>
 
-        <div class="center line"></div>
-        <div class='flex-container mobile-column desktop-row'>
-          <div>
-            <a href="<?= $url ?>"><h2 class='article-title'><?= $row['title'] ?></h2></a>
-            <a class="desktop-only" href='<?= $url ?>'><?= $url ?></a>
-            <div><?= $row['description'] ?></div>
-          </div>
+            <div class="center line"></div>
+            <div class='flex-container mobile-column desktop-row'>
+              <div>
+                <a href="<?= $url ?>"><h2 class='article-title'><?= $row['title'] ?></h2></a>
+                <a class="desktop-only" href='<?= $url ?>'><?= $url ?></a>
+                <div><?= $row['description'] ?></div>
+              </div>
 
-          <div>
-            <div class="mobile-divider-small desktop-divider-small"></div>
-            <a href="<?= $url ?>"><img class='desktop-left-margin product rounded' src='images/univisium/<?= $img_source ?>' alt='<?= $img_alternative ?>' title='<?= $img_title ?>'></a>
-            <div class="mobile-divider-small desktop-divider-small"></div>
-          </div>
+              <div>
+                <div class="mobile-divider-small desktop-divider-small"></div>
+
+                <?php if ($img_source): ?><a href="<?= $url ?>">
+                  <img class='desktop-left-margin product rounded' src='images/univisium/<?= $img_source ?>' alt='<?= $img_alternative ?>' title='<?= $img_title ?>'></a>
+                <?php endif; ?>
+
+                <div class="mobile-divider-small desktop-divider-small"></div>
+              </div>
+            </div>
+          <?php endforeach; ?>
         </div>
-
-        <?php endwhile; ?>
-      </div>
       <?php endif; ?>
 
       <div class="cell rounded">
@@ -265,7 +269,6 @@ $quote = $quoteRepository->find();
             else if ($_GET['message'] == "empty") echo "<div class='alert error'>All fields must be filled out.</div>";
             else if ($_GET['message'] == "succes") echo "<div class='alert success'>Your message has been send!</div>";
           }
-
         ?>
 
         Don't trust this form? You can find my public key <a alt="A link to my public key" title="A link to my public key" href="assets/files/key.pub">here</a>
