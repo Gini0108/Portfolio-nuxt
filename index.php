@@ -1,7 +1,7 @@
 <?php
 require 'php/functions.php';
 
-require '../config.php';
+require 'config.php';
 require 'libraries/entity/Quote.php';
 require 'libraries/mapper/QuoteMapper.php';
 require 'libraries/repository/QuoteRepository.php';
