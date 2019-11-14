@@ -1,10 +1,10 @@
 <template>
   <div class="intro">
-    <img alt="Vue logo" class="title" src="./../assets/Sjors van Holst title.png">
-    <img alt="Vue logo" class="self" src="./../assets/Sjors van Holst image.png">
+    <img alt="Vue logo" class="title" src="./../assets/Intro/Sjors van Holst title.png">
+    <img alt="Vue logo" class="self" src="./../assets/Intro/Sjors van Holst image.png">
 
     <a href="#section">
-    <img alt="Vue logo" class="arrow" src="./../assets/Arrow.png">
+    <img alt="Vue logo" class="arrow" src="./../assets/Intro/Arrow.png">
   </a>
   </div>
 </template>
