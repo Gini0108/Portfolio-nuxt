@@ -1,12 +1,12 @@
 <template>
-  <div class="intro">
+  <section id="intro">
     <img alt="Vue logo" class="title" src="./../assets/Intro/Sjors van Holst title.png">
     <img alt="Vue logo" class="self" src="./../assets/Intro/Sjors van Holst image.png">
 
-    <a href="#section">
+    <a href="#about">
     <img alt="Vue logo" class="arrow" src="./../assets/Intro/Arrow.png">
   </a>
-  </div>
+</section>
 </template>
 
 <script>
@@ -16,7 +16,7 @@
 </script>
 
 <style scoped>
-  .intro {
+  #intro {
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -73,7 +73,7 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    .intro {
+    #intro {
       background: linear-gradient(-45deg, #2E3047, #43455C, #3C3F58, #707793);
       animation: background 5s ease infinite;
     }
