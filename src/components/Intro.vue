@@ -1,5 +1,7 @@
 <template>
   <section id="intro">
+    <div class="background"></div>
+
     <img alt="Vue logo" class="title" src="./../assets/Intro/Sjors van Holst title.png">
     <img alt="Vue logo" class="self" src="./../assets/Intro/Sjors van Holst image.png">
 
@@ -24,6 +26,15 @@
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     animation: background 15s ease infinite;
     background-size: 400% 400%;
+  }
+
+  .background {
+    width: 100%;
+    height: 100%;
+    opacity: 0.65;
+
+    background-image: url(https://media.giphy.com/media/l4hLyOGRJWNSR8QQ8/giphy.gif);
+    background-size: cover;
   }
 
   .title {
@@ -73,6 +84,10 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    .background {
+      background-image: url(https://i.pinimg.com/originals/76/f8/e7/76f8e75b3056e7b1fe8e73c598eb1d36.gif);
+    }
+
     #intro {
       background: linear-gradient(-45deg, #2E3047, #43455C, #3C3F58, #707793);
       animation: background 5s ease infinite;
