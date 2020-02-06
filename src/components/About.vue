@@ -10,6 +10,8 @@
       <h1>About me</h1>
       <p>I’m Sjors van Holst, a passionate programmer with a focus on web design and experience with PHP, JS, HTML, CSS, C#, Vue, WordPress and AJAX. I’ve got a calm and friendly attitude with a positive approach, I grew up and live in the Netherlands. I finished primary school and continued to high school, where I was introduced to my first programming language: Processing!</p>
       <p>After spending about a year learning al the ins and outs of processing I was ready to move on in a different direction. I fast tracked my study "Applicatie- en Mediaontwikkelaar" since I already had experience programmin. I continued on to study "Informatica" at InHolland Haarlem. I was born on March 22, which makes me 19 years old. If your interested you can download a copy of my CV by clicking here.</p>
+    
+      <Quote :quotes=quotes></Quote>
     </div>
   </section>
 </template>
@@ -17,12 +19,30 @@
 <script>
 import { UAnimateContainer, UAnimate } from 'vue-wow';
 
+import Quote from './Quote.vue'
+
 export default {
   name: 'About',
 
+  data: function () {
+    return {
+      quotes: [
+        {
+          author: "Ianthe Vlems",
+          quote: "It has been, and will be like that sometimes."
+        },
+        {
+          author: "Laurens van Coeverden",
+          quote: "Somebody once told me the world is gonna roll me!"
+        }
+      ],
+    }
+  },
+
   components: {
     UAnimateContainer,
-    UAnimate
+    UAnimate,
+    Quote
   }
 }
 </script>
