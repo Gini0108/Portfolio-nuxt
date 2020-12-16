@@ -2,7 +2,8 @@
   <section id="quote">
     <blockquote class="groucho">
       <vue-typer :text=getQuote erase-style="backspace" :erase-delay=45 :pre-type-delay=2000 @erased='updateQuote' @typed='onTyped'></vue-typer>
-     
+      <span class="nue-typer">{{ getQuote }}</span>
+
       <transition name="fade">
         <footer v-if="show">{{ getAuthor }}</footer>
       </transition>
@@ -57,16 +58,40 @@
   }
 </script>
 
-<style scoped>
-  small {
-    display: block;
+<style>
+  blockquote {
+    margin: 15px 20px;
   }
 
-  .vue-typer::before {
+  .nue-typer, .vue-typer {
+    width: 90%;
+    color: e4e4e4c5;
+
+    display: block;
+    position: absolute;
+  }
+
+  .nue-typer {
+    position: relative;
+    opacity: 0;
+  }
+
+  .custom.char {
+    color: #e4e4e4c5 !important;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .custom.caret { 
+    background-color:e4e4e4c5 !important;
+  }
+
+  .vue-typer::before, .nue-typer::before {
+    font-family: 'Open Sans', sans-serif;
     content: open-quote;
   }
 
-  .vue-typer:after {
+  .vue-typer:after, .nue-typer:after  {
+    font-family: 'Open Sans', sans-serif;
     content: close-quote;
   }
 
@@ -89,15 +114,16 @@
   .groucho {
     position: relative;
     font-family: 'Sanchez', serif;
-    font-size: 2.4em;
+    font-size: 28px;
     line-height: 1.5em;
   }
 
   footer {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 0.6em;
+    /* font-family: 'Noto Sans', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
     font-weight: 700;
-    color: #d3d3cf;
+    color: #e4e4e4c5;
     float: right;
   }
 
@@ -112,8 +138,8 @@
     top: 0.28em;
     position: absolute;
 
-    font-size: 6em;
+    font-size: 2em;
     font-style: italic;
-    color: #e7e6e4;
+    color: #e4e4e4c5;
   }
 </style>
