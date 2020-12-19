@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.11",
+    "highlight.js": "^10.4.1",
     "vue": "^2.6.11",
     "vue-typer": "^1.2.0",
     "vue-wow": "^1.2.0"
