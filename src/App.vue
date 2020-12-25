@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <color-background />
-
     <snow-background :count="100" />
-    
     <image-background :source="random" />
 
     <div class="background content">
