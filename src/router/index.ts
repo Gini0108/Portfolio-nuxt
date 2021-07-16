@@ -7,18 +7,6 @@ const routes: Array<RouteRecordRaw> = [
     name: "Home",
     component: Home,
   },
-  {
-    path: "/privacy-policy",
-    name: "Privacy",
-    component: () =>
-      import(/* webpackChunkName: "privacy" */ "../views/Privacy.vue"),
-  },
-  {
-    path: "/terms-of-service",
-    name: "Terms",
-    component: () =>
-      import(/* webpackChunkName: "terms" */ "../views/Terms.vue"),
-  },
 ];
 
 const router = createRouter({
