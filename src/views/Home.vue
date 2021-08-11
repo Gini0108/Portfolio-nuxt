@@ -19,11 +19,7 @@ import Background from "@/components/Background.vue";
     Background,
   },
 })
-export default class Home extends Vue {
-  mounted(): void {
-    document.title = `Oops! | Sjors van Holst`;
-  }
-}
+export default class Home extends Vue { }
 </script>
 
 <style lang="scss" scoped>
