@@ -10,52 +10,59 @@
 </template>
 
 <style lang="scss">
-body {
-  margin: 0px;
-}
-
-#app {
+body, html, #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: left;
   font-size: 3vw;
+
+  margin: 0;
 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width: 600px) {
-  #app {
+  html {
     font-size: 2.5vw;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  #app {
+  html {
     font-size: 2vw;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  #app {
+  html {
     font-size: 1.5vw;
   }
 }
 
 @media only screen and (min-width: 1366px) {
-  #app {
+  html {
     font-size: 1.25vw;
   }
 }
 
 @media only screen and (min-width: 1920px) {
-  #app {
+  html {
     font-size: 1vw;
   }
 }
 
 @media only screen and (min-width: 2560px) {
-  #app {
+  html {
     font-size: 0.75vw;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 </style>

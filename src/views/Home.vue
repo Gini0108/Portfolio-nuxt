@@ -38,13 +38,13 @@ export default class Home extends Vue { }
 
     .title {
       color: white;
-      font-size: 2em;
+      font-size: 2rem;
       font-weight: 600;
     }
 
     .subtitle {
       color: white;
-      font-size: 1em;
+      font-size: 1rem;
     }
   }
 }
