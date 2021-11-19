@@ -19,7 +19,7 @@ import Background from "@/components/Background.vue";
     Background,
   },
 })
-export default class Home extends Vue { }
+export default class Home extends Vue {}
 </script>
 
 <style lang="scss" scoped>

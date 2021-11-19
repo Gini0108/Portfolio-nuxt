@@ -10,7 +10,9 @@
 </template>
 
 <style lang="scss">
-body, html, #app {
+body,
+html,
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: left;
   font-size: 3vw;
