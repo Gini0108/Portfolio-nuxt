@@ -1,9 +1,9 @@
-name: Checks
+name: Push
 
 on:
   push:
     branches:
-      - main
+      - development
 
 jobs:
   quality:
@@ -27,8 +27,8 @@ jobs:
       - name: Run NPM check
         run: npm run check
 
-  build:
-    name: Build
+  generate:
+    name: Generate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
@@ -44,18 +44,18 @@ jobs:
       - name: Install NPM dependencies
         run: npm ci --ignore-scripts
 
-      - name: Run NPM build
-        run: npm run build
+      - name: Run NPM generate
+        run: npm run generate
 
       - name: Archive artifact
         uses: actions/upload-artifact@main
         with:
-          name: dist
-          path: dist
+          name: .output
+          path: .output
 
   deploy:
     name: Deploy
-    needs: build
+    needs: [quality, generate]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
@@ -64,12 +64,12 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@main
         with:
-          name: dist
-          path: dist
+          name: .output
+          path: .output
 
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy
+          args: hosting:channel:deploy development
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
